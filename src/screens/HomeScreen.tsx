@@ -13,12 +13,17 @@ export function HomeScreen({ onNavigate }: Props) {
   return (
     <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
       <ImageBackground source={{ uri: images.marinaHero }} style={styles.hero} imageStyle={styles.heroImage}>
-        <View style={styles.heroShade} />
+        <View style={styles.heroWash} />
+        <View style={styles.heroFadeSoft} />
+        <View style={styles.heroFadeMid} />
+        <View style={styles.heroFadeStrong} />
+        <View style={styles.heroFadeBottom} />
         <View style={styles.heroCopy}>
           <Text style={styles.eyebrow}>BIENVENIDO A CASA</Text>
           <Text style={styles.heroTitle}>Buenos días, Abraham</Text>
           <View style={styles.chips}>
             <GlassCard style={styles.chip}>
+              <MaterialCommunityIcons name="office-building-outline" size={22} color={colors.primary} />
               <Text style={styles.chipText}>Torre A, Depto. 402</Text>
             </GlassCard>
             <GlassCard style={styles.chip}>
@@ -75,19 +80,51 @@ const styles = StyleSheet.create({
     paddingBottom: 112,
   },
   hero: {
-    height: 430,
+    height: 500,
     justifyContent: 'flex-end',
   },
   heroImage: {
     resizeMode: 'cover',
   },
-  heroShade: {
+  heroWash: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: 'rgba(249, 249, 252, 0.28)',
+    backgroundColor: 'rgba(249, 249, 252, 0.22)',
+  },
+  heroFadeSoft: {
+    backgroundColor: 'rgba(249, 249, 252, 0.16)',
+    bottom: 210,
+    height: 130,
+    left: 0,
+    position: 'absolute',
+    right: 0,
+  },
+  heroFadeMid: {
+    backgroundColor: 'rgba(249, 249, 252, 0.34)',
+    bottom: 118,
+    height: 130,
+    left: 0,
+    position: 'absolute',
+    right: 0,
+  },
+  heroFadeStrong: {
+    backgroundColor: 'rgba(249, 249, 252, 0.62)',
+    bottom: 50,
+    height: 110,
+    left: 0,
+    position: 'absolute',
+    right: 0,
+  },
+  heroFadeBottom: {
+    backgroundColor: colors.surface,
+    bottom: 0,
+    height: 72,
+    left: 0,
+    position: 'absolute',
+    right: 0,
   },
   heroCopy: {
     padding: 24,
-    paddingBottom: 42,
+    paddingBottom: 76,
   },
   eyebrow: {
     color: colors.primary,
@@ -97,9 +134,9 @@ const styles = StyleSheet.create({
   },
   heroTitle: {
     color: colors.onSurface,
-    fontSize: 34,
+    fontSize: 36,
     fontWeight: '800',
-    lineHeight: 40,
+    lineHeight: 42,
   },
   chips: {
     flexDirection: 'row',
@@ -111,12 +148,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     gap: 8,
-    paddingHorizontal: 14,
-    paddingVertical: 10,
+    paddingHorizontal: 15,
+    paddingVertical: 11,
   },
   chipText: {
     color: colors.onSurfaceVariant,
-    fontSize: 14,
+    fontSize: 15,
     fontWeight: '600',
   },
   dot: {
@@ -127,11 +164,11 @@ const styles = StyleSheet.create({
   },
   stats: {
     gap: 16,
-    marginTop: -24,
+    marginTop: -46,
     paddingHorizontal: 24,
   },
   statCard: {
-    padding: 22,
+    padding: 18,
   },
   statTop: {
     alignItems: 'center',
@@ -146,17 +183,17 @@ const styles = StyleSheet.create({
   },
   statTitle: {
     color: colors.onSurface,
-    fontSize: 22,
+    fontSize: 20,
     fontWeight: '800',
   },
   statDetail: {
     color: colors.onSurfaceVariant,
-    fontSize: 16,
+    fontSize: 14,
     marginTop: 4,
   },
   sectionTitle: {
     color: colors.onSurface,
-    fontSize: 24,
+    fontSize: 22,
     fontWeight: '800',
     marginHorizontal: 24,
     marginTop: 36,
@@ -173,17 +210,17 @@ const styles = StyleSheet.create({
   },
   serviceCard: {
     alignItems: 'center',
-    minHeight: 148,
+    minHeight: 126,
     justifyContent: 'center',
-    padding: 18,
+    padding: 14,
   },
   serviceIcon: {
     alignItems: 'center',
     backgroundColor: 'rgba(46, 97, 132, 0.08)',
-    borderRadius: 32,
-    height: 64,
+    borderRadius: 28,
+    height: 56,
     justifyContent: 'center',
-    width: 64,
+    width: 56,
   },
   serviceLabel: {
     color: colors.onSurface,
@@ -194,7 +231,7 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
   },
   event: {
-    height: 220,
+    height: 190,
     margin: 24,
     overflow: 'hidden',
   },
@@ -213,13 +250,13 @@ const styles = StyleSheet.create({
   },
   eventTitle: {
     color: colors.onPrimary,
-    fontSize: 24,
+    fontSize: 22,
     fontWeight: '900',
   },
   eventText: {
     color: 'rgba(255, 255, 255, 0.86)',
-    fontSize: 16,
-    lineHeight: 22,
+    fontSize: 14,
+    lineHeight: 20,
     marginTop: 8,
   },
   eventButton: {
