@@ -1,0 +1,33 @@
+export const colors = {
+  surface: '#f9f9fc',
+  surfaceDim: '#d9dadd',
+  surfaceContainerLowest: '#ffffff',
+  surfaceContainerLow: '#f3f3f7',
+  surfaceContainer: '#edeef1',
+  surfaceContainerHigh: '#e7e8eb',
+  surfaceContainerHighest: '#e2e2e5',
+  onSurface: '#191c1e',
+  onSurfaceVariant: '#41474e',
+  outline: '#71787e',
+  outlineVariant: '#c1c7ce',
+  primary: '#2e6184',
+  onPrimary: '#ffffff',
+  primaryContainer: '#497a9e',
+  secondary: '#006878',
+  secondaryContainer: '#87e8fe',
+  onSecondaryContainer: '#006978',
+  tertiary: '#206380',
+  error: '#ba1a1a',
+  errorContainer: '#ffdad6',
+  onErrorContainer: '#93000a',
+  success: '#1f8a5b',
+  shadow: 'rgba(48, 99, 134, 0.12)',
+  scrim: 'rgba(0, 0, 0, 0.42)',
+  glass: 'rgba(255, 255, 255, 0.78)',
+};
+
+export const spacing = {
+  page: 24,
+  gutter: 24,
+  unit: 8,
+};

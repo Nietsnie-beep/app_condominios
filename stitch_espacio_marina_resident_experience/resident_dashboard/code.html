@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Espacio Marina Resident Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700&amp;family=Hanken+Grotesk:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#e7e8eb",
+                        "surface": "#f9f9fc",
+                        "on-surface": "#191c1e",
+                        "on-tertiary-fixed": "#001e2b",
+                        "tertiary-fixed-dim": "#92ceef",
+                        "outline-variant": "#c1c7ce",
+                        "inverse-surface": "#2e3133",
+                        "primary-fixed-dim": "#9bccf4",
+                        "on-secondary-fixed": "#001f25",
+                        "on-secondary-container": "#006978",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#2e6184",
+                        "surface-container": "#edeef1",
+                        "secondary-fixed": "#a5eeff",
+                        "tertiary": "#206380",
+                        "surface-tint": "#306386",
+                        "on-primary-container": "#fefdff",
+                        "tertiary-container": "#3e7c9a",
+                        "on-primary-fixed": "#001e30",
+                        "surface-dim": "#d9dadd",
+                        "on-primary-fixed-variant": "#114b6d",
+                        "outline": "#71787e",
+                        "secondary": "#006878",
+                        "on-secondary-fixed-variant": "#004e5a",
+                        "on-tertiary-fixed-variant": "#004d67",
+                        "background": "#f9f9fc",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "on-surface-variant": "#41474e",
+                        "surface-variant": "#e2e2e5",
+                        "primary-container": "#497a9e",
+                        "surface-container-highest": "#e2e2e5",
+                        "on-tertiary-container": "#fdfdff",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#9bccf4",
+                        "tertiary-fixed": "#c1e8ff",
+                        "primary-fixed": "#cae6ff",
+                        "secondary-fixed-dim": "#72d4e9",
+                        "surface-bright": "#f9f9fc",
+                        "surface-container-low": "#f3f3f7",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#87e8fe",
+                        "inverse-on-surface": "#f0f0f4",
+                        "on-background": "#191c1e",
+                        "on-secondary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "container-padding-mobile": "24px",
+                        "container-padding-desktop": "80px",
+                        "gutter": "24px",
+                        "section-gap": "120px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Hanken Grotesk"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "display-lg-mobile": ["Plus Jakarta Sans"],
+                        "label-caps": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "0.04em", "fontWeight": "300"}],
+                        "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "0.02em", "fontWeight": "300"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "0.02em", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #f9f9fc;
+            font-family: 'Hanken Grotesk', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 8px 32px 0 rgba(48, 99, 134, 0.05);
+        }
+        .text-shadow-sm {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .fill-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(46, 97, 132, 0.4), rgba(249, 249, 252, 1));
+        }
+    </style>
+</head>
+<body class="pb-24">
+<header class="fixed top-0 w-full z-50 bg-surface/60 dark:bg-on-tertiary-fixed/60 backdrop-blur-xl border-b border-white/20 dark:border-white/10 shadow-[0_8px_32px_rgba(48,99,134,0.05)]">
+<div class="flex items-center justify-between px-container-padding-mobile h-16">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden border-2 border-primary-container/20">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a sophisticated man in his early 40s with a warm smile, styled with high-end editorial lighting. He is wearing a minimalist linen shirt, reflecting a luxury coastal lifestyle. The background is a soft-focus interior of a modern architectural home with oceanic blue accents, following the Espacio Marina brand aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeOPWnRJ-nnYyv0Ez3b13jheCQv9-98dHLQfssv5siR5m6FiFnWRMQWFoFtmCShI-z8pG3AdkM9W1Q6KkGIqRgvXvkGaKq4wuwnifaXiiylUy2PfbQiND_HGPvuTTpRpjl-QYdFDeMdy6SPCkm8dyJJprUt4lWxLGrpEbp7gbVXGq_BESLXpSwrP018jHFeBpsufMvQTHjIL5ZGmhrWxaUsatR0hxHm9hytdlYeAnrqfl9M56bIyGBgIlMdwZKfSgz59NzByF5g2GR"/>
+</div>
+<h1 class="font-display-lg-mobile text-display-lg-mobile tracking-tight text-primary font-bold">Espacio Marina</h1>
+</div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-primary scale-95 duration-200 hover:opacity-80 transition-opacity cursor-pointer">badge</span>
+</div>
+</div>
+</header>
+<main class="mt-16">
+<section class="relative h-[60vh] md:h-[70vh] flex flex-col justify-end overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8mNmTTxWY-mB2X8L23lENlNWTC2V7VinA9zoDSzvapL4x9cYyWabFd8U2aNQCl8k0RvzVUUfqqpHHTqQ1CGinyRcEhZ3IMSdJw0YcvKrgSh_cAkAEvbw2otDmlz3U5d9zb3-B4erOZ19p7L4BIqfxO8TAlGCZc4FH4tzLmhJZz4K0HfTuiwEuQdcY4e3NcJZfC2sMEUzd7BXeWczhcmY5TZFH2h9QEXTf2kl4wRe104KoZLzsnp65GYnNUu-8w0J5iG-fSuMNr9vp"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
+</div>
+<div class="relative z-10 px-container-padding-mobile mb-12">
+<p class="font-label-caps text-label-caps text-primary tracking-[0.2em] mb-2">WELCOME HOME</p>
+<h2 class="font-display-lg-mobile text-display-lg-mobile text-on-surface font-bold">Good Morning, Abraham</h2>
+<div class="mt-4 flex flex-wrap gap-4 items-center">
+<div class="glass-card px-4 py-2 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">apartment</span>
+<span class="font-body-md text-on-surface-variant">Tower A, Apt 402</span>
+</div>
+<div class="glass-card px-4 py-2 rounded-full flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="font-body-md text-on-surface-variant">Resident Status: Active</span>
+</div>
+</div>
+</div>
+</section>
+<section class="px-container-padding-mobile -mt-8 relative z-20 space-y-gutter">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="glass-card p-6 rounded-xl border-l-4 border-l-primary">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg">event_available</span>
+<span class="font-label-caps text-label-caps text-outline">UPCOMING</span>
+</div>
+<h3 class="font-headline-md text-on-surface mb-1">Padel Court</h3>
+<p class="font-body-md text-on-surface-variant">Today at 6:00 PM</p>
+</div>
+<div class="glass-card p-6 rounded-xl">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-secondary bg-secondary/10 p-2 rounded-lg">group</span>
+<span class="font-label-caps text-label-caps text-outline">VISITORS</span>
+</div>
+<h3 class="font-headline-md text-on-surface mb-1">1 scheduled</h3>
+<p class="font-body-md text-on-surface-variant">Arrival expected 2:30 PM</p>
+</div>
+<div class="glass-card p-6 rounded-xl">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-tertiary bg-tertiary/10 p-2 rounded-lg">account_balance_wallet</span>
+<span class="font-label-caps text-label-caps text-outline">MAINTENANCE</span>
+</div>
+<h3 class="font-headline-md text-on-surface mb-1">$0 Balance</h3>
+<p class="font-body-md text-on-surface-variant">Account fully settled</p>
+</div>
+</div>
+<div class="pt-8">
+<h2 class="font-headline-md text-on-surface mb-6">Concierge Services</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<button class="glass-card p-8 rounded-2xl flex flex-col items-center justify-center gap-4 active:scale-95 transition-all group">
+<div class="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-[32px] text-primary">directions_car</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface">Vehicle Access</span>
+</button>
+<button class="glass-card p-8 rounded-2xl flex flex-col items-center justify-center gap-4 active:scale-95 transition-all group">
+<div class="w-16 h-16 rounded-full bg-secondary/5 flex items-center justify-center group-hover:bg-secondary/10 transition-colors">
+<span class="material-symbols-outlined text-[32px] text-secondary">person_add</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface">Visitor Access</span>
+</button>
+<button class="glass-card p-8 rounded-2xl flex flex-col items-center justify-center gap-4 active:scale-95 transition-all group">
+<div class="w-16 h-16 rounded-full bg-tertiary/5 flex items-center justify-center group-hover:bg-tertiary/10 transition-colors">
+<span class="material-symbols-outlined text-[32px] text-tertiary">pool</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface">Amenities</span>
+</button>
+<button class="glass-card p-8 rounded-2xl flex flex-col items-center justify-center gap-4 active:scale-95 transition-all group">
+<div class="w-16 h-16 rounded-full bg-primary-container/5 flex items-center justify-center group-hover:bg-primary-container/10 transition-colors">
+<span class="material-symbols-outlined text-[32px] text-primary-container">payments</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface">Payments</span>
+</button>
+</div>
+</div>
+<div class="pt-8 pb-12">
+<div class="relative rounded-3xl overflow-hidden h-48 group cursor-pointer">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A wide-angle landscape photograph of a stunning sunset over a luxury marina with sleek white yachts docked in calm turquoise waters. The sky is a gradient of soft peach, lavender, and gold. The scene is framed by modern, minimalist glass-and-stone architecture that embodies the serene, upscale atmosphere of Espacio Marina." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHiqQiCJfXtYGYPzMzw0SYdDCnQ9_FHHAOTfAKXOYXuWeoNkNryeD6Sh_B_eepSmp2J6aC5K50Ttw_LqYNXSbCFQsD1D0c8SBwP9NF3e8XfcZxcNjVtB546yHCjclMP_F3t2PNgigVNSh7co3ajqyVY4rJZVMKFzpo-P_dYIQu7tRlKHwVKeRPGvbvXmS20n5aRK0A65_6foV47XMl3jhTvC_f91qJJKVc3XdAmcHv5fBTJQbHsMjFJO5Duhob_x9ET4odbM73tVdP"/>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/60 to-transparent flex items-center px-12">
+<div class="max-w-xs">
+<h4 class="font-headline-md text-on-primary mb-2">Marina Sunset Soirée</h4>
+<p class="font-body-md text-on-primary/80">Join your neighbors for wine and jazz this Friday at 7 PM.</p>
+<button class="mt-4 px-6 py-2 bg-on-primary text-primary rounded-full font-label-caps text-[10px] tracking-widest uppercase">Learn More</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface/60 dark:bg-on-tertiary-fixed/60 backdrop-blur-2xl border-t border-white/20 shadow-[0_-8px_32px_rgba(0,0,0,0.05)]">
+<div class="flex justify-around items-center h-20 pb-safe px-4">
+<a class="flex flex-col items-center justify-center text-primary dark:text-tertiary-fixed-dim hover:text-primary-container transition-colors active:scale-90" href="#">
+<span class="material-symbols-outlined fill-icon">home</span>
+<span class="font-label-caps text-label-caps mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-outline hover:text-primary-container transition-colors active:scale-90" href="#">
+<span class="material-symbols-outlined">qr_code_2</span>
+<span class="font-label-caps text-label-caps mt-1">Access</span>
+</a>
+<a class="flex flex-col items-center justify-center text-outline hover:text-primary-container transition-colors active:scale-90" href="#">
+<span class="material-symbols-outlined">event_seat</span>
+<span class="font-label-caps text-label-caps mt-1">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-outline hover:text-primary-container transition-colors active:scale-90" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-label-caps text-label-caps mt-1">Social</span>
+</a>
+<a class="flex flex-col items-center justify-center text-outline hover:text-primary-container transition-colors active:scale-90" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-caps text-label-caps mt-1">Profile</span>
+</a>
+</div>
+</nav>
+<script>
+        // Micro-interaction for scroll effects on TopAppBar
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-lg');
+                header.classList.remove('bg-surface/60');
+                header.classList.add('bg-surface/90');
+            } else {
+                header.classList.remove('shadow-lg');
+                header.classList.add('bg-surface/60');
+                header.classList.remove('bg-surface/90');
+            }
+        });
+
+        // Add subtle animation to chips
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-2px)';
+                card.style.transition = 'all 0.3s ease';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body></html>
